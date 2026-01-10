@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+env/
+venv/
+.venv/
+
+# Environment / secrets
+.env
+secret.py
+secrets.json
+
+# Data
+dataset.csv
+similarity.pkl
+movies_list.pkl
+*.sqlite3
+
+# Node
+node_modules/
+frontend/node_modules/
+package-lock.json
+yarn.lock
+
+# Build outputs
+dist/
+build/
+frontend/dist/
+frontend/build/
+
+# IDEs and editors
+.idea/
+.vscode/
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# OneDrive / backup
+*.bak
+#zip files
+frontend.zip
+*.zip
