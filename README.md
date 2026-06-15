@@ -187,7 +187,12 @@ To enable full automation, add the following repository secrets in GitHub:
 
 If you prefer to deploy directly from the repo in Render, you can instead:
 1. Add a new Web Service (Docker) pointing to this repo for the backend
-2. Add a new Static Site for the frontend and set the build command to `npm install && npm run build`
+   - set Root Directory to `/` or leave it blank
+   - use `Dockerfile` at the repo root
+2. Add a new Static Site for the frontend
+   - set Root Directory to `frontend`
+   - use build command `npm install && npm run build`
+   - set publish directory to `dist`
 3. Use the provided `render.yaml` as a starting manifest for Render's Infrastructure as Code
 
 After setting secrets, pushes to `main` or `version-2` will build images and (if configured) trigger Render deploys.

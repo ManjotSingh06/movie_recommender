@@ -2,12 +2,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './App.css';
-import Navbar from './components/navBar';
+import Navbar from './components/NavBar';
 import Header from './components/Header';
-import SearchBar from './components/SearchBar.jsx'
+import SearchBar from './components/SearchBar.jsx';
 import MovieCard from './components/MovieCard';
-import './components/MovieModal';
-import './components/Footer';
 import MovieModal from './components/MovieModal';
 import Footer from './components/Footer';
 
