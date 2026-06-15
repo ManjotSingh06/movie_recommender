@@ -11,8 +11,7 @@ import './components/Footer';
 import MovieModal from './components/MovieModal';
 import Footer from './components/Footer';
 
-
-const API_URL = 'http://localhost:5000';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 function App() {
   const [movies, setMovies] = useState([]);
