@@ -2,6 +2,7 @@ from flask import Flask,jsonify,request
 import requests
 import pickle
 from flask_cors import CORS
+from dotenv import OMDB_API_KEY
 
 app = Flask(__name__)
 CORS(app)
@@ -9,7 +10,7 @@ CORS(app)
 movies=pickle.load(open("movies_list.pkl","rb"))
 similarity=pickle.load(open("similarity.pkl","rb"))
 
-OMDB_API_KEY = "ac5fb13"
+
 
 def fetch_poster(title):
     try:
