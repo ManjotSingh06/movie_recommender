@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: movie-recommender-backend
+    env: docker
+    dockerfilePath: Dockerfile
+    branch: main
+    plan: free
+
+  - type: static
+    name: movie-recommender-frontend
+    env: static
+    buildCommand: npm install && npm run build
+    publishPath: dist
+    branch: main
+    plan: free

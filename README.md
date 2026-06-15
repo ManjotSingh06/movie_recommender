@@ -172,3 +172,23 @@ This repository contains a movie recommender web app with:
 - `movies_list.pkl` and `similarity.pkl` are generated from `Main.ipynb` using the dataset and feature engineering steps.
 - Keep `.env` files out of source control. Only commit `.env.example`.
 - If you add deployment automation, update `README.md` with your platform-specific commands.
+
+## CI / CD with GitHub Actions and Render
+
+This repository includes a GitHub Actions workflow at `.github/workflows/ci-cd.yml` that:
+- installs backend dependencies
+- builds and pushes Docker images for backend and frontend to GitHub Container Registry (GHCR)
+- optionally triggers Render deploys using the Render API
+
+To enable full automation, add the following repository secrets in GitHub:
+- `RENDER_API_KEY` — API key from your Render account
+- `RENDER_BACKEND_SERVICE_ID` — Render service ID for the backend service
+- `RENDER_FRONTEND_SERVICE_ID` — Render service ID for the frontend site
+
+If you prefer to deploy directly from the repo in Render, you can instead:
+1. Add a new Web Service (Docker) pointing to this repo for the backend
+2. Add a new Static Site for the frontend and set the build command to `npm install && npm run build`
+3. Use the provided `render.yaml` as a starting manifest for Render's Infrastructure as Code
+
+After setting secrets, pushes to `main` or `version-2` will build images and (if configured) trigger Render deploys.
+
