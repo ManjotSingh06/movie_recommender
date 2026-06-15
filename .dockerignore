@@ -20,5 +20,7 @@ frontend/dist
 frontend/build
 *.env
 *.pkl
+!movies_list.pkl
+!similarity.pkl
 dataset.csv
 Main.ipynb

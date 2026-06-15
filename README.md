@@ -160,8 +160,10 @@ This repository contains a movie recommender web app with:
 ### Backend
 - `OMDB_API_KEY` — your OMDb API key
 - `DATA_PATH` — path to the source dataset (for data generation workflows)
-- `MOVIES_PKL` — movie artifact file
-- `SIMILARITY_PKL` — similarity artifact file
+- `MOVIES_PKL` — movie artifact file path
+- `SIMILARITY_PKL` — similarity artifact file path
+- `MOVIES_PKL_URL` — optional URL to download `movies_list.pkl` if the file is not present locally
+- `SIMILARITY_PKL_URL` — optional URL to download `similarity.pkl` if the file is not present locally
 - `ALLOWED_ORIGINS` — CORS origin for frontend access
 
 ### Frontend
