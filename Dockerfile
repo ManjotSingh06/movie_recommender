@@ -1,15 +1,13 @@
-FROM python:3.12-slim
+FROM python:3.11
 
 WORKDIR /app
 
-COPY requirements.txt ./
-RUN python -m pip install --no-cache-dir -r requirements.txt
+COPY requirements.txt .
+
+RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-ENV PYTHONUNBUFFERED=1
-ENV FLASK_APP=app.py
+EXPOSE 7860
 
-EXPOSE 5000
-
-CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5000", "app:app"]
+CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:7860"]
